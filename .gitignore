@@ -12,4 +12,5 @@ public/
 *.css.map
 *.js.map
 
+static/dist/build_styles.css
 db.sqlite3
