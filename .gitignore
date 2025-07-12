@@ -12,5 +12,4 @@ public/
 *.css.map
 *.js.map
 
-static/dist/
 db.sqlite3
