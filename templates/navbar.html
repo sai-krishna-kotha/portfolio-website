@@ -1,0 +1,78 @@
+{% load nav_extras %}
+
+<nav class="fixed top-0 left-0 w-full bg-blue-600 shadow z-50 text-black transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <span class="text-2xl font-bold text-white">Portfolio</span>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center space-x-6">
+        {% for name in 'home,about,skills,projects,achievements,contact'|split:',' %}
+          {% with 'myapp:'|add:name as viewname %}
+            <a href="{% url viewname %}"
+               class="{% nav_active name %} transition-all duration-300 ease-in-out hover:underline underline-offset-4 capitalize">
+              {{ name }}
+            </a>
+          {% endwith %}
+        {% endfor %}
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="relative w-8 h-8 focus:outline-none cursor-pointer">
+          <span id="line1" class="absolute top-2 left-0 w-8 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+          <span id="line2" class="absolute top-4 left-0 w-8 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+          <span id="line3" class="absolute top-6 left-0 w-8 h-0.5 bg-white transition-all duration-300 ease-in-out"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+<div id="mobile-menu" class="hidden md:hidden flex-col space-y-3 m-2 p-4 rounded-lg transition-all duration-300 ease-in-out">
+  {% for name in 'home,about,skills,projects,achievements,contact'|split:',' %}
+    {% with 'myapp:'|add:name as viewname %}
+      <a href="{% url viewname %}"
+         class="{% nav_active name %} block py-2 px-4 rounded hover:bg-amber-300  transition-all duration-300 ease-in-out capitalize">
+        {{ name }}
+      </a>
+    {% endwith %}
+  {% endfor %}
+</div>
+
+  </div>
+</nav>
+
+<!-- Mobile Menu Toggle Script -->
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  const line1 = document.getElementById('line1');
+  const line2 = document.getElementById('line2');
+  const line3 = document.getElementById('line3');
+  
+  let isOpen = false;
+  
+  button.addEventListener('click', () => {
+    isOpen = !isOpen;
+  
+    if (isOpen) {
+      menu.classList.remove('hidden');
+      menu.classList.add('flex');
+  
+      line1.classList.add('rotate-45', 'top-4');
+      line2.classList.add('opacity-0');
+      line3.classList.add('-rotate-45', 'top-4');
+    } else {
+      menu.classList.remove('flex');
+      menu.classList.add('hidden');
+  
+      line1.classList.remove('rotate-45', 'top-4');
+      line2.classList.remove('opacity-0');
+      line3.classList.remove('-rotate-45', 'top-4');
+    }
+  });
+  
+</script>

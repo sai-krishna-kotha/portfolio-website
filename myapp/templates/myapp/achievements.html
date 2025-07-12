@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Achievements - Portfolio{% endblock %}
+
+{% block content %}
+<section class="min-h-screen bg-gray-100 text-gray-900 py-16 px-4">
+  <div class="max-w-5xl mx-auto">
+    <!-- Title -->
+    <h1 class="text-4xl font-bold text-blue-600 mb-8 underline underline-offset-8 decoration-2">
+        My Achievements
+    </h1>
+
+    <!-- Achievements Grid -->
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8 text-gray-700">
+
+      <!-- GATE Qualification -->
+      <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-transform transform hover:scale-[1.02]">
+        <h2 class="text-2xl font-semibold text-blue-500 mb-2">🎓 GATE CS 2025 Qualified</h2>
+        <p class="text-base leading-relaxed">
+          Successfully qualified GATE 2025 conducted by IIT Roorkee, showcasing a strong grasp of core Computer Science fundamentals.
+        </p>
+      </div>
+
+      <!-- DSA Practice -->
+      <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-transform transform hover:scale-[1.02]">
+        <h2 class="text-xl font-semibold text-blue-500 mb-2">🧠 300+ DSA Problems Solved</h2>
+        <p class="text-base leading-relaxed">
+          Solved over 300 algorithmic problems on <strong>LeetCode</strong> and <strong>GeeksforGeeks</strong>, sharpening my logical reasoning and problem-solving abilities.
+        </p>
+      </div>
+
+      <!-- Academic Achievements -->
+      <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-transform transform hover:scale-[1.02]">
+        <h2 class="text-xl font-semibold text-blue-500 mb-2">🏅 Academic Excellence</h2>
+        <p class="text-base leading-relaxed">
+          - B.Tech CSE @ RGUKT: CGPA <strong>8.80</strong><br>
+          - PUC: CGPA <strong>9.78</strong><br>
+          - SSC: GPA <strong>9.96</strong><br>
+          Consistent performer throughout my academic journey.
+        </p>
+      </div>
+      <div class="p-6 bg-white rounded-xl shadow-md hover:shadow-lg transform hover:scale-[1.02] transition duration-300">
+        <h2 class="text-blue-500 font-semibold text-xl mb-2">🏆 South Zone Football Participation</h2>
+        <p class="text-gray-700 leading-relaxed text-base">
+          Represented my university at the <strong>South Zone Football Tournament</strong>, showcasing teamwork, leadership, and athletic discipline at a competitive inter-university level.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+{% endblock %}

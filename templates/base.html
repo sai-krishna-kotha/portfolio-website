@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Saii</title>
+    <link rel="stylesheet" href="{% static 'dist/build_styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="pt-[64px] bg-gray-100">
+    {% block nav_bar %}
+    {% include "navbar.html" %}
+    {% endblock nav_bar %}
+
+    {% block content %}
+    
+    {% endblock content %}
+
+    {% block footer %}
+    
+    {% endblock footer %}
+
+</body>
+</html>
