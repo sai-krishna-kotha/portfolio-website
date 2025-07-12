@@ -1,10 +1,14 @@
 services:
   - type: web
-    name: myproject
+    name: saikrishna-portfolio-website
     env: python
     plan: free
-    buildCommand: "python manage.py collectstatic --noinput"
-    startCommand: "gunicorn myproject.wsgi:application"
+    buildCommand: |
+      pip install -r requirements.txt
+      npm install
+      npx tailwindcss -i ./static/css/main.css -o ./static/dist/build_styles.css --minify
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn myproject.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: myproject.settings
