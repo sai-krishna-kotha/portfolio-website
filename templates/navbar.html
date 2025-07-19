@@ -41,13 +41,22 @@
 
     <!-- Mobile Dropdown Menu -->
 <div id="mobile-menu" class="hidden md:hidden flex-col space-y-3 m-2 mt-0 p-4 pt-0 rounded-lg transition-all duration-300 ease-in-out">
-  {% for name in 'home,about,skills,projects,achievements,contact'|split:',' %}
+  {% for name in 'home,about,skills,blog,projects,achievements,contact'|split:',' %}
+  {% if name != 'blog' %}
     {% with 'myapp:'|add:name as viewname %}
       <a href="{% url viewname %}"
          class="{% nav_active name %} block py-2 px-2 rounded hover:bg-amber-300  transition-all duration-300 ease-in-out capitalize">
         {{ name }}
       </a>
     {% endwith %}
+    {% else %}
+    {% with 'myblog:'|add:name as viewname %}
+      <a href="{% url viewname %}"
+         class="{% nav_active name %} block py-2 px-2 rounded hover:bg-amber-300  transition-all duration-300 ease-in-out capitalize">
+        {{ name }}
+      </a>
+    {% endwith %}
+    {% endif %}
   {% endfor %}
 </div>
 
