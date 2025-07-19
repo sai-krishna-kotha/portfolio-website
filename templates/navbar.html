@@ -16,7 +16,7 @@
             <a href="{% url viewname %}"
                class="{% nav_active name %} transition-all duration-300 ease-in-out hover:underline underline-offset-4 capitalize">
               {{ name }}
-            </a>
+            </a> 
           {% endwith %}
         {% else %}
           {% with 'myblog:'|add:name as viewname %}
