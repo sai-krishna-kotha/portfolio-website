@@ -11,6 +11,7 @@ public/
 ../.venv/
 *.css.map
 *.js.map
+.env
 
 static/dist/build_styles.css
 db.sqlite3
