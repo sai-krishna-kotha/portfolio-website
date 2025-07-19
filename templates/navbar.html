@@ -10,13 +10,22 @@
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex items-center space-x-6">
-        {% for name in 'home,about,skills,projects,achievements,contact'|split:',' %}
+        {% for name in 'home,about,skills,blog,projects,achievements,contact'|split:',' %}
+        {% if name != 'blog' %}
           {% with 'myapp:'|add:name as viewname %}
             <a href="{% url viewname %}"
                class="{% nav_active name %} transition-all duration-300 ease-in-out hover:underline underline-offset-4 capitalize">
               {{ name }}
             </a>
           {% endwith %}
+        {% else %}
+          {% with 'myblog:'|add:name as viewname %}
+            <a href="{% url viewname %}"
+               class="{% nav_active name %} transition-all duration-300 ease-in-out hover:underline underline-offset-4 capitalize">
+              {{ name }}
+            </a>
+          {% endwith %}
+        {% endif %}
         {% endfor %}
       </div>
 
