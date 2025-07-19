@@ -40,7 +40,11 @@
     </div>
 
     <!-- Mobile Dropdown Menu -->
+<<<<<<< HEAD
 <div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full h-[calc(100vh-4rem)] bg-blue-600 flex flex-col items-center space-y-6 pt-6 z-40 transition-all duration-300 ease-in-out">
+=======
+<div id="mobile-menu" class="hidden md:hidden fixed top-16 left-0 w-full h-[calc(100vh-4rem)] bg-blue-600 flex flex-col items-start space-y-6 pt-6 px-6 z-40 transition-all duration-300 ease-in-out">
+>>>>>>> b844aa8 (Update navbar.html)
   {% for name in 'home,about,skills,blog,projects,achievements,contact'|split:',' %}
   {% if name != 'blog' %}
     {% with 'myapp:'|add:name as viewname %}
