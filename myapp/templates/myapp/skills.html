@@ -5,61 +5,66 @@
 
 {% block content %}
 <section class="min-h-screen bg-gray-100 text-gray-900 py-16 px-4">
-  <div class="max-w-6xl px-6 md:mx-12 lg:px-16">
-    <!-- Page Title -->
-    <h1 class="text-4xl font-bold text-blue-600 mb-8 underline underline-offset-8 decoration-2">My Skills</h1>
+    <div class="max-w-6xl px-6 md:mx-12 lg:px-16">
+        <h1 class="text-4xl font-bold text-blue-600 mb-8 underline underline-offset-8 decoration-2">My Skills</h1>
 
-    <!-- Skill Categories -->
-    <div class="grid md:grid-cols-2 gap-10">
-      
-      <!-- Backend Skills -->
-      <div>
-        <h2 class="text-2xl font-semibold text-blue-500 mb-4">Backend Development</h2>
-        <div class="flex flex-wrap gap-4">
-          {% for skill in "Python,Django,Django REST Framework,MySQL,PostgreSQL,OOPs,Postman"|split:"," %}
-            <div class="bg-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105 font-medium text-gray-800">
-              {{ skill }}
+        <div class="grid md:grid-cols-2 gap-10">
+            
+            <div>
+                <h2 class="text-2xl font-semibold text-blue-500 mb-4">Backend Development</h2>
+                <div class="flex flex-wrap gap-4">
+                    {% for skill in "Python,Django,Django REST Framework,FastAPI,REST APIs,Microservices (basics),PostgreSQL,MySQL"|split:"," %}
+                        <div class="bg-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105 font-medium text-gray-800">
+                            {{ skill }}
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-          {% endfor %}
-        </div>
-      </div>
 
-      <!-- Frontend Skills -->
-      <div>
-        <h2 class="text-2xl font-semibold text-blue-500 mb-4">Frontend Development</h2>
-        <div class="flex flex-wrap gap-4">
-          {% for skill in "HTML,CSS,JavaScript,React,Tailwind CSS"|split:"," %}
-            <div class="bg-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105 font-medium text-gray-800">
-              {{ skill }}
+            <div>
+                <h2 class="text-2xl font-semibold text-blue-500 mb-4">Frontend Development</h2>
+                <div class="flex flex-wrap gap-4">
+                    {% for skill in "HTML,CSS,JavaScript,Bootstrap,Tailwind CSS"|split:"," %}
+                        <div class="bg-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105 font-medium text-gray-800">
+                            {{ skill }}
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-          {% endfor %}
-        </div>
-      </div>
 
-      <!-- Tools and Platforms -->
-      <div>
-        <h2 class="text-2xl font-semibold text-blue-500 mb-4">Tools & Platforms</h2>
-        <div class="flex flex-wrap gap-4">
-          {% for tool in "Git,GitHub,Render,Vercel,Linux,Bash"|split:"," %}
-            <div class="bg-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105 font-medium text-gray-800">
-              {{ tool }}
+            <div>
+                <h2 class="text-2xl font-semibold text-blue-500 mb-4">Databases</h2>
+                <div class="flex flex-wrap gap-4">
+                    {% for db in "PostgreSQL,MySQL"|split:"," %}
+                        <div class="bg-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105 font-medium text-gray-800">
+                            {{ db }}
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-          {% endfor %}
-        </div>
-      </div>
 
-      <!-- Soft Skills -->
-      <div>
-        <h2 class="text-2xl font-semibold text-blue-500 mb-4">Soft Skills</h2>
-        <div class="flex flex-wrap gap-4">
-          {% for skill in "Teamwork,Communication,Problem Solving,Time Management,Adaptability"|split:"," %}
-            <div class="bg-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105 font-medium text-gray-800">
-              {{ skill }}
+            <div>
+                <h2 class="text-2xl font-semibold text-blue-500 mb-4">Tools & Platforms</h2>
+                <div class="flex flex-wrap gap-4">
+                    {% for tool in "Git,Postman,Linux,Docker (basics),CI/CD (basics)"|split:"," %}
+                        <div class="bg-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105 font-medium text-gray-800">
+                            {{ tool }}
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
-          {% endfor %}
+
+            <div>
+                <h2 class="text-2xl font-semibold text-blue-500 mb-4">Soft Skills</h2>
+                <div class="flex flex-wrap gap-4">
+                    {% for skill in "Problem Solving,Analytical Thinking,Quick Learner,Growth Mindset,Technical Curiosity"|split:"," %}
+                        <div class="bg-white px-4 py-2 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105 font-medium text-gray-800">
+                            {{ skill }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 {% endblock %}
