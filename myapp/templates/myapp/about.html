@@ -65,15 +65,16 @@
             downloadButto{% extends "base.html" %}
 {% load static %}
 {% load nav_extras %}
-
 {% block title %}About Me - Portfolio{% endblock %}
 
 {% block content %}
 <section class="bg-gray-100 text-gray-900 py-16 min-h-screen transition-colors duration-500">
-  <div class="max-w-6xl px-6 md:mx-12 lg:px-16 mx-auto"> {# Added mx-auto for better centering on larger screens #}
+  <div class="max-w-6xl px-6 md:mx-12 lg:px-16">
+    <!-- Section Heading -->
     <h1 class="text-4xl font-bold text-blue-600 mb-8 underline underline-offset-8 decoration-2">About Me</h1>
 
     <div class="flex flex-col-reverse md:flex-row items-center gap-12 mt-10">
+      <!-- Text Content -->
       <div class="flex-1">
         <h2 class="text-2xl font-semibold mb-4">
           Hi, I'm <span class="text-blue-700">Sai Krishna Kotha</span> 👋
@@ -85,23 +86,25 @@
         <p class="text-gray-600 mb-6">
           My current focus is on enhancing my backend expertise with Django REST Framework and deploying scalable apps using platforms like Render and Vercel.
         </p>
-        <a href="https://drive.google.com/file/d/1R5RkpbhwUv9nabCkFZJ0kqFUgOrAVG_h/view?usp=drive_link"
-           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg shadow transition duration-300"
-           download="KothaSaiKrishna_Resume.pdf">
+        <a href="{% static 'docs/kothasaikrishna_resume.pdf' %}"
+           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg shadow transition duration-300" download="KothaSaiKrishna_Resume.pdf">
           📄 Download Resume
         </a>
       </div>
 
-      <div class="flex justify-center items-center">
-        <div class="h-80 w-80 rounded-2xl overflow-hidden shadow-lg">
-          <img src="{% static 'images/profile.jpg' %}"
-               alt="Profile Picture"
-               class="w-full h-full object-cover object-[3%_40%] transition-transform duration-300 hover:scale-101">
-        </div>
-      </div>
+      <!-- Profile Image Section -->
+<div class="flex justify-center items-center">
+    <div class="h-80 w-80 rounded-2xl overflow-hidden shadow-lg">
+      <img src="{% static 'images/profile.jpg' %}"
+           alt="Profile Picture"
+           class="w-full h-full object-cover object-[3%_40%] transition-transform duration-300 hover:scale-101">
+    </div>
+  </div>
+  
     </div>
 
-    {% comment %} <div class="mt-16">
+    <!-- Tech Stack -->
+    <div class="mt-16">
       <h3 class="text-xl font-semibold text-blue-600 mb-4 underline underline-offset-4 decoration-2">Tech Stack</h3>
       <div class="flex flex-wrap gap-3">
         {% for tech in "Python,Django,Django REST Framework,JavaScript,Tailwind CSS,HTML5,CSS3,Git,Render"|split:',' %}
@@ -110,17 +113,11 @@
         </span>
         {% endfor %}
       </div>
-    </div> {% endcomment %}
+    </div>
   </div>
 </section>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const downloadButton = document.getElementById('resumeDownloadBtn');
-        const successMessage = document.getElementById('downloadSuccessMessage');
-
-        if (downloadButton && successMessage) {
-            downloadButton.addEventListener('click', function() {
+{% endblock %}
+n.addEventListener('click', function() {
                 // Remove 'hidden' class to show the message
                 successMessage.classList.remove('hidden');
 
