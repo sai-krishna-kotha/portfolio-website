@@ -51,4 +51,23 @@
   </div>
 </section>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const downloadButton = document.getElementById('resumeDownloadBtn');
+        const successMessage = document.getElementById('downloadSuccessMessage');
+
+        if (downloadButton && successMessage) {
+            downloadButton.addEventListener('click', function() {
+                // Remove 'hidden' class to show the message
+                successMessage.classList.remove('hidden');
+
+                // Optional: Hide the message after a few seconds (e.g., 5 seconds)
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 5000); // 5000 milliseconds = 5 seconds
+            });
+        }
+    });
+</script>
+
 {% endblock %}
