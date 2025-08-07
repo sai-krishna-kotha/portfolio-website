@@ -45,14 +45,14 @@
   {% if name != 'blog' %}
     {% with 'myapp:'|add:name as viewname %}
       <a href="{% url viewname %}"
-         class="{% nav_active name %} block py-2 px-2 rounded hover:bg-amber-300  transition-all duration-300 ease-in-out capitalize">
+         class="{% nav_active name %} block py-2 w-full m-2 px-10 rounded hover:bg-amber-300  transition-all duration-300 ease-in-out capitalize">
         {{ name }}
       </a>
     {% endwith %}
     {% else %}
     {% with 'myblog:'|add:name as viewname %}
       <a href="{% url viewname %}"
-         class="{% nav_active name %} block py-2 px-2 rounded hover:bg-amber-300  transition-all duration-300 ease-in-out capitalize">
+         class="{% nav_active name %} block py-2 w-full px-10 m-2 rounded hover:bg-amber-300  transition-all duration-300 ease-in-out capitalize">
         {{ name }}
       </a>
     {% endwith %}
